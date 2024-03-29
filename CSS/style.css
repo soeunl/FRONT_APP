@@ -44,6 +44,14 @@ img {
 .montserrat {
     font-family: "Montserrat", sans-serif;
 }
+
+h3 {
+    font-size: 1.538rem;
+    color: #212121;
+    text-align: center;
+    line-height: 1;  /* 글자에 기본적으로 있는 위아래 간격 제거 */
+    padding: 20px;
+}
 /* 공통 스타일 E */
 
 /* 헤더 영역 S */
@@ -86,15 +94,22 @@ header nav a {
 /* 헤더 영역 E */
 
 /* 메인 배너 영역 S */
-.main-banner img {
+.main-banner img { 
     width: 100%;
+    display: block;
 }
+/* 이미지는 기본적으로 inline 속성이기 때문에 하단에 여백이생긴다
+그러므로 display를 block 속성으로 바꾸어 주어야 한다 */
+
 /* 메인 배너 영역 E */
 
 /* 서브 메뉴 영역 S */
 .sub-menus {
     display: flex;
     flex-wrap: wrap;
+    border: 10px solid #e6e6e6;
+    border-left: 0;
+    border-right: 0;
 }
 
 .sub-menus a {
@@ -102,7 +117,288 @@ header nav a {
     text-align: center;
     height: 50px;
     line-height: 50px;
-    font-size: 14px;
+    font-size: 1.077rem;
     font-weight: 500;
+    border-top: 1px solid #e6e6e6;
+    border-left: 1px solid #e6e6e6;
+}
+
+.sub-menus a:nth-of-type(1),
+.sub-menus a:nth-of-type(2),
+.sub-menus a:nth-of-type(3) {
+    border-top: 0;
+}
+
+.sub-menus a:nth-of-type(3n + 1) {
+    border-left: 0;
 }
 /* 서브 메뉴 영역 E */
+
+/* 서브 배너 영역 S */
+.sub-banner {
+    display: flex;
+    flex-wrap: wrap; 
+    /* 영역의 넓이를 벗어나면 다음칸 개행 */
+    margin-bottom: 20px;
+}
+
+.sub-banner a:nth-of-type(1) {
+    width: 100%;
+}
+
+.sub-banner a:nth-of-type(2),
+.sub-banner a:nth-of-type(3) {
+    width: 50%;
+}
+
+.sub-banner img {
+    width: 100%;
+    display: block;
+}
+/* 서브 배너 영역 E */
+
+/* 서브 목록 영역 S */
+.products ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 15px;
+}
+
+.products li {
+    width: calc(100% / 2 - 8px);
+    margin-bottom: 30px;
+}
+
+.products .product-image img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.products li:nth-of-type(2n) {
+    margin-left: 16px;
+}
+
+.products .product-image {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.products .product-price {
+    font-size: 1.154rem;
+}
+
+.products .product-price .price {
+    font-weight: 900;
+    font-size: 1.3rem;
+    letter-spacing: -1px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.products .product-name {
+    color: #3e3d3c;
+    font-size: 1.154rem;
+    word-break: break-all;  /* 한글, 영문, 숫자 등 입력할 때 줄 개행 */
+}
+
+.products .stars img {
+    height: 11px;
+}
+
+.products .no-of-review {
+    font-size: 0.923rem;
+    color: #a7a7a7;
+    margin-left: 6px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.products .review-rate{
+    margin: 10px 0 2px;
+}
+
+.products .more-button {
+    font-size: 1.154rem;
+    color: #666;
+    border: 1px solid #b1b1b1;
+    font-weight: bold;
+    background: #fff;
+    padding: 8px 0;
+    display: block;
+    width: 100%;
+    cursor: pointer; /* 커서를 손가락 모양으로 만들기 */
+}
+
+.bottom-banner {
+    width: 100%;
+    display: block;
+    margin: 10px 0 20px;
+}
+/* 서브 목록 영역 E */
+
+/* 푸터 영역 S */
+footer {
+    background: #f9f9f9;
+    padding: 25px 0 80px;
+    margin-top: 25px;
+}
+
+footer .logo img{
+    width: 79px;
+    display: block;
+    margin: 0 auto 12px;
+} 
+
+footer .center-phone {
+    border: 2px solid #2a2a2a;
+    border-radius: 20px;
+    display: block;
+    height: 35px;
+    line-height: 31px;
+    width: 190px;
+    margin: 0 auto 7px;
+    font-size: 1.538rem;
+    font-weight: 800;
+    text-align: center;
+    font-weight: 900;
+}
+
+footer .center-phone span {
+    font-size: 1.538rem;
+    font-weight: 800;
+    font-weight: 900;
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    left: -3px;
+    bottom: -3px;
+}
+
+footer .center-phone img {
+    height: 16px;
+    vertical-align: middle;
+}
+
+footer .bank-info {
+    font-size: 0.923rem;
+    color: #2a2a2a;
+    text-align: center;
+}
+
+footer .bank-info span {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+footer .company-info {
+    text-align: center;
+    margin: 8px 0 8px;
+    font-size: 0.923rem;
+    color: #878787;
+    font-weight: 700;
+}
+
+footer .company-info img {
+    width: 15px;
+    vertical-align: middle;
+}
+
+footer .links {
+    text-align:center
+}
+
+footer .links a {
+    font-size: 0.846rem;
+    padding: 3px 11px;
+    color: #878787;
+    position: relative;
+}
+
+footer .links a:not(.last)::after {
+    /* .last만 제외하고 가상 요소 추가 */
+    content: '';  /* 비어 있는 값을 넣어야 적용됨 */
+    display: block;
+    width: 1px;
+    height: 15px;
+    background: #878787;
+    position: absolute;
+    right: 0;
+    top: 4px;
+}
+/* 푸터 영역 E */
+
+/* 하단 고정 메뉴 S */
+.bottom-quick-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #dfe1e5;
+    z-index: 10;
+    padding: 9px 15px;
+
+    display: flex;
+    justify-content: space-around;
+    }
+
+.bottom-quick-menu button {
+    width: 60px;
+    height: 40px;
+    border: none;
+}
+
+.bottom-quick-menu button i {
+    font-size: 40px;
+}
+
+.bottom-quick-menu a {
+    flex-grow: 1; 
+    width: 0;
+    text-align: center;
+}
+
+.bottom-quick-menu .txt {
+    color: #2d2f38;
+    font-size: 0.953rem;
+}
+
+
+.bottom-quick-menu .icon { 
+    height: 30px;   
+}
+
+
+.bottom-quick-menu .icon.pen { 
+    background:url("../images/pen.png") no-repeat center center;
+    background-size: 25px;
+}
+
+.bottom-quick-menu .icon.comment {
+    background:url("../images/comment.png") no-repeat center center;
+    background-size: 35px;
+} 
+
+.bottom-quick-menu .icon.truck {
+    background:url("../images/truck.png") no-repeat center center;
+    background-size: 35px;
+} 
+
+.bottom-quick-menu .icon.person {
+    background:url("../images/person.png") no-repeat center center;
+    background-size: 22px;
+} 
+
+.bottom-quick-links {
+    position: fixed;
+    bottom: 70px;
+    right: 10px;
+    z-index: 10;
+}
+
+.bottom-quick-links img {
+    display: block;
+    width: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+/* 하단 고정 메뉴 E*/
